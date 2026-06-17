@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: 612069931326.dkr.ecr.ap-south-1.amazonaws.com/loan_app_backend :latest
+          image: loan_app_backend:latest
           ports:
             - containerPort: 8080
           envFrom:
