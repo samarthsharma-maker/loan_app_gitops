@@ -1,0 +1,27 @@
+# nginx Ingress — single entry point for the cluster.
+# Routes: /api/* → backend:8080   /  → frontend:8080
+# No rewrite: backend handles its own /api context path.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: loanhub
+  namespace: loanhub
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 8080
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 8080

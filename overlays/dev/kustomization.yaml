@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base/backend
+  - ../../base/frontend
+  - ../../base/ingress
+
+patches:
+  - path: backend/replicas.yaml
+  - path: frontend/replicas.yaml
+  - path: ingress-host.yaml
