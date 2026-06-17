@@ -11,12 +11,6 @@ patches:
 - path: frontend/replicas.yaml
 - path: ingress-host.yaml
 
-configMapGenerator:
-- name: backend-config
-  behavior: merge
-  literals:
-  - SPRING_DATASOURCE_URL=jdbc:postgresql://loanhub-dev.cvakykc0y9mw.ap-south-1.rds.amazonaws.com:5432/loanhub_dev
-
 images:
 - name: loan_app_backend
   newName: 488519936220.dkr.ecr.ap-south-1.amazonaws.com/loanapp-backend
