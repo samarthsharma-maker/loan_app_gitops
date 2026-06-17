@@ -14,3 +14,6 @@ images:
 - name: loan_app_backend
   newName: 488519936220.dkr.ecr.ap-south-1.amazonaws.com/loanapp-backend
   newTag: 09e6cd5
+- name: loan_app_frontend
+  newName: 488519936220.dkr.ecr.ap-south-1.amazonaws.com/loanapp-frontend
+  newTag: "7473771"
